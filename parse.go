@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/xml"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -37,8 +36,6 @@ func parseSitemap() ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	fmt.Println(string(content))
 
 	var newSitemap Urlset
 	err = xml.NewDecoder(bytes.NewBufferString(string(content))).Decode(&newSitemap)

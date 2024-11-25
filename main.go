@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
 	urls, err := parseSitemap()
@@ -8,5 +12,20 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(urls)
+	var recipes []*Recipe
+	for _, url := range urls {
+		recipe, err := parseRecipe(url)
+		if err != nil {
+			panic(err)
+		}
+		recipes = append(recipes, recipe)
+	}
+
+	b := []byte("")
+	err = json.NewEncoder(bytes.NewBuffer(b)).Encode(recipes)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(b))
 }
