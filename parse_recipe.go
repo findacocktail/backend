@@ -2,13 +2,12 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
 	"strings"
 
 	"golang.org/x/net/html"
 )
-
-var ErrTagNotFound = errors.New("tag not found")
 
 type Recipe struct {
 	YoutubeLink string        `json:"youtube_link"`
@@ -42,7 +41,7 @@ func parseRecipe(recipeLink string) (*Recipe, error) {
 
 	youtubeLink, err := getLinkStartsWith(token, "https://www.youtube.com/watch")
 	if err != nil {
-		return nil, err
+		fmt.Println("could not find link", err)
 	}
 
 	recipe := Recipe{
@@ -86,7 +85,7 @@ func getNode(root *html.Node, tagText string) (*html.Node, error) {
 	if tag != nil {
 		return tag, nil
 	}
-	return nil, ErrTagNotFound
+	return nil, errors.New(fmt.Sprint("tag not found", tagText))
 }
 
 func getNodeByAttribute(root *html.Node, attributeName string, attributeValue string) (*html.Node, error) {
@@ -111,7 +110,7 @@ func getNodeByAttribute(root *html.Node, attributeName string, attributeValue st
 	if tag != nil {
 		return tag, nil
 	}
-	return nil, ErrTagNotFound
+	return nil, errors.New(fmt.Sprint("tag not found", attributeName, attributeName))
 }
 
 func getLinkStartsWith(root *html.Node, link string) (string, error) {
@@ -136,5 +135,5 @@ func getLinkStartsWith(root *html.Node, link string) (string, error) {
 	if href != "" {
 		return href, nil
 	}
-	return href, ErrTagNotFound
+	return href, errors.New(fmt.Sprint("tag not found", link))
 }

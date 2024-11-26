@@ -1,9 +1,13 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
+	"sync"
+)
+
+var (
+	concurrentRequest = 4
 )
 
 func main() {
@@ -12,20 +16,48 @@ func main() {
 		panic(err)
 	}
 
-	var recipes []*Recipe
-	for _, url := range urls {
-		recipe, err := parseRecipe(url)
-		if err != nil {
-			panic(err)
+	start := 0
+	run := test{
+		recipes: []*Recipe{},
+		wg:      &sync.WaitGroup{},
+	}
+	totalURLs := len(urls)
+	for start < totalURLs {
+		diff := totalURLs - start
+		if concurrentRequest > diff {
+			concurrentRequest = diff
 		}
-		recipes = append(recipes, recipe)
+
+		for range concurrentRequest {
+			run.dispatchJob(urls[start])
+			start++
+		}
+		run.wg.Wait()
 	}
 
-	b := []byte("")
-	err = json.NewEncoder(bytes.NewBuffer(b)).Encode(recipes)
+	content, err := json.Marshal(run.recipes)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(string(b))
+	fmt.Println(string(content))
+}
+
+type test struct {
+	wg      *sync.WaitGroup
+	recipes []*Recipe
+}
+
+// Search for prime numbers in 4 ranges.
+func (t *test) dispatchJob(url string) {
+	t.wg.Add(1)
+	go func(url string) {
+		recipe, err := parseRecipe(url)
+		if err != nil {
+			panic(err)
+		}
+		t.recipes = append(t.recipes, recipe)
+
+		t.wg.Done()
+	}(url)
 }

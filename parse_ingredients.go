@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -28,7 +29,9 @@ func parseIngredients(root *html.Node) ([]*Ingredient, error) {
 			ingredientSplit := strings.Split(child.FirstChild.Data, " ")
 			amount, err := strconv.ParseFloat(ingredientSplit[0], 64)
 			if err != nil {
-				return nil, err
+				fmt.Println(err)
+				amount = 0
+				ingredientSplit = []string{"", "", child.FirstChild.Data}
 			}
 
 			ingredients = append(ingredients, &Ingredient{
