@@ -1,63 +1,44 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
-	"fmt"
-	"sync"
+	"log/slog"
+	"os"
+
+	"github.com/caarlos0/env"
+	"github.com/ramonmedeiros/iba/cmd"
+	"github.com/ramonmedeiros/iba/internal/app"
 )
 
-var (
-	concurrentRequest = 4
-)
+type config struct {
+	Port string `env:"PORT" envDefault:"3000"`
+	File string `env:"FILE" envDefault:"20241126.json"`
+}
 
 func main() {
-	urls, err := parseSitemap()
+	logger := slog.New(slog.NewJSONHandler(os.Stderr, nil))
+	logger.Enabled(context.Background(), slog.LevelError)
+
+	cfg := config{}
+	if err := env.Parse(&cfg); err != nil {
+		logger.Error("could not parse config", slog.Any("error", err))
+		os.Exit(1)
+	}
+
+	content, err := os.ReadFile(cfg.File)
 	if err != nil {
-		panic(err)
+		logger.Error("could not read file", slog.Any("error", err))
+		os.Exit(1)
 	}
 
-	start := 0
-	run := test{
-		recipes: []*Recipe{},
-		wg:      &sync.WaitGroup{},
-	}
-	totalURLs := len(urls)
-	for start < totalURLs {
-		diff := totalURLs - start
-		if concurrentRequest > diff {
-			concurrentRequest = diff
-		}
-
-		for range concurrentRequest {
-			run.dispatchJob(urls[start])
-			start++
-		}
-		run.wg.Wait()
-	}
-
-	content, err := json.Marshal(run.recipes)
+	var recipes []*cmd.Recipe
+	err = json.Unmarshal(content, &recipes)
 	if err != nil {
-		panic(err)
+		logger.Error("could not marshal", slog.Any("error", err))
+		os.Exit(1)
 	}
 
-	fmt.Println(string(content))
-}
-
-type test struct {
-	wg      *sync.WaitGroup
-	recipes []*Recipe
-}
-
-// Search for prime numbers in 4 ranges.
-func (t *test) dispatchJob(url string) {
-	t.wg.Add(1)
-	go func(url string) {
-		recipe, err := parseRecipe(url)
-		if err != nil {
-			panic(err)
-		}
-		t.recipes = append(t.recipes, recipe)
-
-		t.wg.Done()
-	}(url)
+	httpServer := app.New(cfg.Port, logger, recipes)
+	httpServer.Serve()
 }
