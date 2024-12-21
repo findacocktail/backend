@@ -9,7 +9,6 @@ type Recipe struct {
 }
 
 type Ingredient struct {
-	Name        string  `json:"name"`
 	Amount      float64 `json:"amount"`
 	Scale       string  `json:"scale"`
 	Description string  `json:"description"`

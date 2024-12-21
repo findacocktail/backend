@@ -1,10 +1,16 @@
 package recipes
 
 import (
+	"errors"
+
 	"github.com/blevesearch/bleve"
 	"github.com/blevesearch/bleve/search/query"
 
 	"github.com/samber/lo"
+)
+
+var (
+	ErrNotFound = errors.New("cocktail not found")
 )
 
 func (r *service) Search(terms []string) ([]Recipe, error) {
@@ -17,6 +23,10 @@ func (r *service) Search(terms []string) ([]Recipe, error) {
 	searchResult, err := r.recipesIndex.Search(bleve.NewSearchRequest(query))
 	if err != nil {
 		return nil, err
+	}
+
+	if len(searchResult.Hits) == 0 {
+		return nil, ErrNotFound
 	}
 
 	var results []Recipe

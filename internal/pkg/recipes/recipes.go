@@ -15,8 +15,6 @@ var content embed.FS
 
 const (
 	recipesFileName string = "static/20241221.json"
-
-	recipesIndexName string = "recipes"
 )
 
 type Service interface {
@@ -53,7 +51,7 @@ func New(logger *slog.Logger) (*service, error) {
 
 func readAndIndexFiles(recipes []Recipe) (*bleve.Index, error) {
 	mapping := bleve.NewIndexMapping()
-	index, err := bleve.New(recipesIndexName, mapping)
+	index, err := bleve.NewMemOnly(mapping)
 	if err != nil {
 		return nil, err
 	}
