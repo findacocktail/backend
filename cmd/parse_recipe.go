@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"errors"
@@ -10,6 +10,7 @@ import (
 )
 
 type Recipe struct {
+	Name        string        `json:"name"`
 	YoutubeLink string        `json:"youtube_link"`
 	Ingredients []*Ingredient `json:"ingredients"`
 	Method      string        `json:"method"`
@@ -39,12 +40,18 @@ func parseRecipe(recipeLink string) (*Recipe, error) {
 		return nil, err
 	}
 
+	cocktailName, err := getNode(token, "h1")
+	if err != nil {
+		return nil, err
+	}
+
 	youtubeLink, err := getLinkStartsWith(token, "https://www.youtube.com/watch")
 	if err != nil {
 		fmt.Println("could not find link", err)
 	}
 
 	recipe := Recipe{
+		Name:        strings.TrimSpace(cocktailName.FirstChild.Data),
 		YoutubeLink: youtubeLink,
 	}
 
