@@ -692,9 +692,9 @@
                 "description": "Cream"
             },
             {
-                "amount": 0,
-                "scale": "",
-                "description": "30ml Egg white"
+                "amount": 30,
+                "scale": "ml",
+                "description": "Egg white"
             },
             {
                 "amount": 3,
@@ -1542,7 +1542,7 @@
             {
                 "amount": 60,
                 "scale": "ml",
-                "description": "Cachaca"
+                "description": "Cachaça"
             },
             {
                 "amount": 20,
@@ -1992,9 +1992,9 @@
         "youtube_link": "https://www.youtube.com/watch?v=3T0zb0pXTfg",
         "ingredients": [
             {
-                "amount": 0,
-                "scale": "",
-                "description": "60ml Gin"
+                "amount": 60,
+                "scale": "ml",
+                "description": "Gin"
             },
             {
                 "amount": 22.5,

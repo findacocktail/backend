@@ -1,0 +1,150 @@
+{
+    "brands": [
+      {
+        "name": "Tanqueray",
+        "origin": "England",
+        "key_features": ["Classic London Dry gin", "Juniper-forward", "Popular in cocktails"]
+      },
+      {
+        "name": "Beefeater",
+        "origin": "England",
+        "key_features": ["London Dry gin", "Traditional flavor", "Bold and aromatic"]
+      },
+      {
+        "name": "Bombay Sapphire",
+        "origin": "England",
+        "key_features": ["Infused botanicals", "Smooth flavor", "Distinct blue bottle"]
+      },
+      {
+        "name": "Hendrick's",
+        "origin": "Scotland",
+        "key_features": ["Unique cucumber and rose flavor", "Small batch production", "Craft gin"]
+      },
+      {
+        "name": "Gordon's",
+        "origin": "England",
+        "key_features": ["Affordable", "Classic London Dry gin", "Widely available"]
+      },
+      {
+        "name": "Plymouth Gin",
+        "origin": "England",
+        "key_features": ["Distinctive flavor profile", "Rich and smooth", "Geographically protected"]
+      },
+      {
+        "name": "Monkey 47",
+        "origin": "Germany",
+        "key_features": ["47 botanicals", "Complex flavor", "Small-batch production"]
+      },
+      {
+        "name": "The Botanist",
+        "origin": "Scotland",
+        "key_features": ["22 hand-foraged botanicals", "Smooth and floral", "Islay gin"]
+      },
+      {
+        "name": "Sipsmith",
+        "origin": "England",
+        "key_features": ["Traditional London Dry gin", "Small-batch production", "Bold flavor"]
+      },
+      {
+        "name": "Nolet's Silver",
+        "origin": "Netherlands",
+        "key_features": ["Floral and fruity", "High-end gin", "Craft production"]
+      },
+      {
+        "name": "Aviation",
+        "origin": "USA",
+        "key_features": ["American dry gin", "Floral and citrus notes", "Craft gin"]
+      },
+      {
+        "name": "Tanqueray No. Ten",
+        "origin": "England",
+        "key_features": ["Premium gin", "Citrus-forward", "Small-batch production"]
+      },
+      {
+        "name": "Brooklyn Gin",
+        "origin": "USA",
+        "key_features": ["Craft gin", "Fresh citrus peels", "Small-batch production"]
+      },
+      {
+        "name": "Roku Gin",
+        "origin": "Japan",
+        "key_features": ["Japanese botanicals", "Floral and herbal notes", "Premium craft gin"]
+      },
+      {
+        "name": "Seagram's",
+        "origin": "USA",
+        "key_features": ["Affordable", "Smooth flavor", "Widely available"]
+      },
+      {
+        "name": "Hayman's",
+        "origin": "England",
+        "key_features": ["Old Tom gin", "Sweet and smooth", "Traditional recipe"]
+      },
+      {
+        "name": "Caorunn",
+        "origin": "Scotland",
+        "key_features": ["Celtic botanicals", "Crisp and aromatic", "Craft gin"]
+      },
+      {
+        "name": "Four Pillars",
+        "origin": "Australia",
+        "key_features": ["Australian botanicals", "Award-winning", "Rich flavor"]
+      },
+      {
+        "name": "Empress 1908",
+        "origin": "Canada",
+        "key_features": ["Infused with butterfly pea flower", "Vibrant blue color", "Smooth and floral"]
+      },
+      {
+        "name": "Opihr",
+        "origin": "England",
+        "key_features": ["Spiced gin", "Oriental botanicals", "Bold and aromatic"]
+      },
+      {
+        "name": "Whitley Neill",
+        "origin": "England",
+        "key_features": ["Wide range of flavors", "Craft gin", "Exotic botanicals"]
+      },
+      {
+        "name": "Bulldog Gin",
+        "origin": "England",
+        "key_features": ["Smooth and bold", "Infused botanicals", "Versatile in cocktails"]
+      },
+      {
+        "name": "Jinro Plum Gin",
+        "origin": "Korea",
+        "key_features": ["Unique plum flavor", "Asian-inspired", "Fruity and aromatic"]
+      },
+      {
+        "name": "Gin Mare",
+        "origin": "Spain",
+        "key_features": ["Mediterranean botanicals", "Herbal and savory", "Craft gin"]
+      },
+      {
+        "name": "Larios",
+        "origin": "Spain",
+        "key_features": ["Affordable", "Citrus-forward", "Widely available"]
+      },
+      {
+        "name": "Star of Bombay",
+        "origin": "England",
+        "key_features": ["Premium gin", "Infused botanicals", "Rich and complex flavor"]
+      },
+      {
+        "name": "Beckett's Gin",
+        "origin": "England",
+        "key_features": ["Sustainable production", "Classic London Dry", "Unique botanicals"]
+      },
+      {
+        "name": "Bluecoat Gin",
+        "origin": "USA",
+        "key_features": ["American dry gin", "Citrus-forward", "Craft production"]
+      },
+      {
+        "name": "Elephant Gin",
+        "origin": "Germany",
+        "key_features": ["African botanicals", "Charity-focused brand", "Craft gin"]
+      }
+    ]
+  }
+  

@@ -14,11 +14,10 @@ const (
 )
 
 func (s *Server) setupEndpoints() {
-	usersEndpoint := s.router.Group("/users")
-	usersEndpoint.GET("", s.getUsers)
+	usersEndpoint := s.router.Group("/cocktails")
+	usersEndpoint.GET("", s.getCocktails)
 }
 
-func (s *Server) getUsers(c *gin.Context) {
-
+func (s *Server) getCocktails(c *gin.Context) {
 	c.JSON(http.StatusOK, nil)
 }

@@ -1,0 +1,110 @@
+{
+    "brands": [
+      {
+        "name": "Aguardiente Antioqueño",
+        "origin": "Colombia",
+        "key_features": ["Sugarcane-based", "Anise-flavored", "Popular in Colombia"]
+      },
+      {
+        "name": "Aguardiente Cristal",
+        "origin": "Colombia",
+        "key_features": ["Smooth flavor", "Anise-infused", "Popular in the Andean region"]
+      },
+      {
+        "name": "Aguardiente Nectar",
+        "origin": "Colombia",
+        "key_features": ["Varieties of sweetness", "Strong anise flavor", "Regional favorite"]
+      },
+      {
+        "name": "Aguardiente Blanco del Valle",
+        "origin": "Colombia",
+        "key_features": ["Dry aguardiente", "Smooth flavor", "Popular in Valle del Cauca"]
+      },
+      {
+        "name": "Aguardiente Llanero",
+        "origin": "Colombia",
+        "key_features": ["Traditional recipe", "Strong flavor", "Regional favorite in Llanos"]
+      },
+      {
+        "name": "Cachaça 51",
+        "origin": "Brazil",
+        "key_features": ["Sugarcane-based spirit", "Smooth and versatile", "Popular in caipirinhas"]
+      },
+      {
+        "name": "Pitú",
+        "origin": "Brazil",
+        "key_features": ["Cachaça-style aguardiente", "Affordable", "Great for cocktails"]
+      },
+      {
+        "name": "Yaguara Cachaça",
+        "origin": "Brazil",
+        "key_features": ["Artisan cachaça", "Organic production", "Premium brand"]
+      },
+      {
+        "name": "Leblon Cachaça",
+        "origin": "Brazil",
+        "key_features": ["Smooth flavor", "Single-estate production", "Premium brand"]
+      },
+      {
+        "name": "Flor de Caña Aguardiente",
+        "origin": "Nicaragua",
+        "key_features": ["Sugarcane-based", "Smooth and slightly sweet"]
+      },
+      {
+        "name": "Zhumir",
+        "origin": "Ecuador",
+        "key_features": ["Variety of flavors", "Sugarcane-based", "Popular in Ecuador"]
+      },
+      {
+        "name": "Cañasgordas",
+        "origin": "Colombia",
+        "key_features": ["Affordable", "Traditional recipe", "Strong anise flavor"]
+      },
+      {
+        "name": "Aguardiente Mil Demonios",
+        "origin": "Colombia",
+        "key_features": ["Artisan production", "Unique flavor profile", "Small-batch aguardiente"]
+      },
+      {
+        "name": "Brisas",
+        "origin": "Ecuador",
+        "key_features": ["Sugarcane-based", "Smooth flavor", "Popular in Ecuador"]
+      },
+      {
+        "name": "Barceló Aguardiente",
+        "origin": "Dominican Republic",
+        "key_features": ["Cane-based", "Subtle sweetness", "Smooth and versatile"]
+      },
+      {
+        "name": "Aguardiente Caballito",
+        "origin": "Mexico",
+        "key_features": ["Traditional production", "Strong flavor", "Regional popularity"]
+      },
+      {
+        "name": "Velho Barreiro",
+        "origin": "Brazil",
+        "key_features": ["Cachaça-style aguardiente", "Smooth and affordable", "Traditional flavor"]
+      },
+      {
+        "name": "Antioqueño Sin Azúcar",
+        "origin": "Colombia",
+        "key_features": ["Sugar-free", "Dry flavor", "Popular health-conscious option"]
+      },
+      {
+        "name": "San Miguel Aguardiente",
+        "origin": "Philippines",
+        "key_features": ["Affordable", "Sugarcane-based", "Popular in Southeast Asia"]
+      },
+      {
+        "name": "Cachaça Velho Chico",
+        "origin": "Brazil",
+        "key_features": ["Artisan cachaça", "Rich flavor", "Regional specialty"]
+      },
+      {
+        "name": "Tapachula Aguardiente",
+        "origin": "Mexico",
+        "key_features": ["Sugarcane-based", "Regional specialty", "Smooth and versatile"]
+      }
+    ]
+  }
+  

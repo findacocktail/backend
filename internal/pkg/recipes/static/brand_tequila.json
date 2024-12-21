@@ -1,0 +1,150 @@
+{
+    "brands": [
+      {
+        "name": "Patrón",
+        "origin": "Mexico",
+        "key_features": ["Premium tequila", "100% agave", "Smooth and versatile"]
+      },
+      {
+        "name": "Jose Cuervo",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "Blanco, Reposado, and Añejo options", "Mass-market"]
+      },
+      {
+        "name": "Don Julio",
+        "origin": "Mexico",
+        "key_features": ["Luxury tequila", "Aged varieties", "Smooth finish"]
+      },
+      {
+        "name": "Casamigos",
+        "origin": "Mexico",
+        "key_features": ["Founded by George Clooney", "Smooth and sweet", "Popular among celebrities"]
+      },
+      {
+        "name": "Herradura",
+        "origin": "Mexico",
+        "key_features": ["Traditional methods", "100% agave", "Wide range of aged tequilas"]
+      },
+      {
+        "name": "1800 Tequila",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Blanco, Reposado, Añejo"]
+      },
+      {
+        "name": "Espolón",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Smooth and flavorful"]
+      },
+      {
+        "name": "Clase Azul",
+        "origin": "Mexico",
+        "key_features": ["Luxury tequila", "Artisan bottles", "Rich and smooth flavor"]
+      },
+      {
+        "name": "El Jimador",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Great for cocktails"]
+      },
+      {
+        "name": "Milagro",
+        "origin": "Mexico",
+        "key_features": ["Modern branding", "100% agave", "Smooth and versatile"]
+      },
+      {
+        "name": "Cazadores",
+        "origin": "Mexico",
+        "key_features": ["100% agave", "Clean flavor", "Blanco and Reposado options"]
+      },
+      {
+        "name": "Olmeca Altos",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Blanco and Reposado"]
+      },
+      {
+        "name": "Avión",
+        "origin": "Mexico",
+        "key_features": ["Premium tequila", "Rich flavor", "Blanco, Reposado, and Añejo"]
+      },
+      {
+        "name": "Corralejo",
+        "origin": "Mexico",
+        "key_features": ["Distinctive bottle design", "100% agave", "Blanco, Reposado, Añejo"]
+      },
+      {
+        "name": "Mezcal Amores",
+        "origin": "Mexico",
+        "key_features": ["Mezcal brand", "Artisan production", "Rich smoky flavor"]
+      },
+      {
+        "name": "Tequila Ocho",
+        "origin": "Mexico",
+        "key_features": ["Single-estate production", "100% agave", "Craft tequila"]
+      },
+      {
+        "name": "Gran Centenario",
+        "origin": "Mexico",
+        "key_features": ["Heritage tequila", "100% agave", "Smooth and rich"]
+      },
+      {
+        "name": "Hornitos",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Great for cocktails"]
+      },
+      {
+        "name": "Maestro Dobel",
+        "origin": "Mexico",
+        "key_features": ["Luxury tequila", "Innovative blends", "Smooth finish"]
+      },
+      {
+        "name": "Casa Noble",
+        "origin": "Mexico",
+        "key_features": ["Certified organic", "100% agave", "Luxury tequila"]
+      },
+      {
+        "name": "Tres Generaciones",
+        "origin": "Mexico",
+        "key_features": ["100% agave", "Blanco, Reposado, and Añejo", "Rich flavor"]
+      },
+      {
+        "name": "Fortaleza",
+        "origin": "Mexico",
+        "key_features": ["Artisan tequila", "Traditional production", "Rich and flavorful"]
+      },
+      {
+        "name": "Tapatio",
+        "origin": "Mexico",
+        "key_features": ["Craft tequila", "Traditional methods", "100% agave"]
+      },
+      {
+        "name": "Siete Leguas",
+        "origin": "Mexico",
+        "key_features": ["Heritage tequila", "Traditional production", "100% agave"]
+      },
+      {
+        "name": "Lobos 1707",
+        "origin": "Mexico",
+        "key_features": ["Celebrity-backed", "Unique aging process", "Smooth and flavorful"]
+      },
+      {
+        "name": "Codigo 1530",
+        "origin": "Mexico",
+        "key_features": ["Ultra-premium", "Rich flavor", "Blanco to Extra Añejo"]
+      },
+      {
+        "name": "Dulce Vida",
+        "origin": "Mexico",
+        "key_features": ["Organic tequila", "100% agave", "High-proof options"]
+      },
+      {
+        "name": "Pura Vida",
+        "origin": "Mexico",
+        "key_features": ["100% agave", "Smooth and affordable", "Versatile for cocktails"]
+      },
+      {
+        "name": "Casco Viejo",
+        "origin": "Mexico",
+        "key_features": ["Affordable", "100% agave", "Great for mixing"]
+      }
+    ]
+  }
+  

@@ -1,0 +1,125 @@
+{
+    "brands": [
+      {
+        "name": "Absolut",
+        "origin": "Sweden",
+        "key_features": ["Clean taste", "Flavored options", "Winter wheat"]
+      },
+      {
+        "name": "Grey Goose",
+        "origin": "France",
+        "key_features": ["Premium vodka", "French wheat", "Smooth texture"]
+      },
+      {
+        "name": "Smirnoff",
+        "origin": "Russia/UK",
+        "key_features": ["Affordable", "Versatile", "Wide availability"]
+      },
+      {
+        "name": "Tito's Handmade Vodka",
+        "origin": "USA",
+        "key_features": ["Craft vodka", "Corn-based", "Gluten-free"]
+      },
+      {
+        "name": "Belvedere",
+        "origin": "Poland",
+        "key_features": ["Luxury vodka", "Rye-based", "Creamy texture"]
+      },
+      {
+        "name": "Cîroc",
+        "origin": "France",
+        "key_features": ["Made from grapes", "Slightly fruity", "Unique production"]
+      },
+      {
+        "name": "Ketel One",
+        "origin": "Netherlands",
+        "key_features": ["Premium vodka", "Wheat-based", "Crisp finish"]
+      },
+      {
+        "name": "Stolichnaya (Stoli)",
+        "origin": "Russia/Latvia",
+        "key_features": ["High-quality grain", "Flavored options"]
+      },
+      {
+        "name": "Svedka",
+        "origin": "Sweden",
+        "key_features": ["Budget-friendly", "Variety of flavors"]
+      },
+      {
+        "name": "Russian Standard",
+        "origin": "Russia",
+        "key_features": ["Traditional Russian methods", "Classic vodka"]
+      },
+      {
+        "name": "Crystal Head Vodka",
+        "origin": "Canada",
+        "key_features": ["Unique skull-shaped bottle", "High-quality ingredients"]
+      },
+      {
+        "name": "Chopin",
+        "origin": "Poland",
+        "key_features": ["Boutique vodka", "Potato, rye, or wheat-based"]
+      },
+      {
+        "name": "Zubrowka",
+        "origin": "Poland",
+        "key_features": ["Infused with bison grass", "Herbal vanilla flavor"]
+      },
+      {
+        "name": "Beluga",
+        "origin": "Russia",
+        "key_features": ["Luxury vodka", "Smooth craftsmanship"]
+      },
+      {
+        "name": "Finlandia",
+        "origin": "Finland",
+        "key_features": ["Pure glacial water", "Barley-based"]
+      },
+      {
+        "name": "Reyka",
+        "origin": "Iceland",
+        "key_features": ["Icelandic glacial water", "Eco-friendly production"]
+      },
+      {
+        "name": "Skyy Vodka",
+        "origin": "USA",
+        "key_features": ["Affordable", "Smooth taste"]
+      },
+      {
+        "name": "Three Olives",
+        "origin": "UK",
+        "key_features": ["Variety of flavors", "Smooth profile"]
+      },
+      {
+        "name": "Pinnacle",
+        "origin": "France",
+        "key_features": ["Affordable", "Wide range of flavors"]
+      },
+      {
+        "name": "New Amsterdam",
+        "origin": "USA",
+        "key_features": ["Affordable", "Smooth and mixable"]
+      },
+      {
+        "name": "Sobieski",
+        "origin": "Poland",
+        "key_features": ["Affordable", "Rye-based", "Smooth taste"]
+      },
+      {
+        "name": "Monopolowa",
+        "origin": "Austria",
+        "key_features": ["Potato-based", "Affordable"]
+      },
+      {
+        "name": "Polugar",
+        "origin": "Russia",
+        "key_features": ["Traditional recipe", "Rye or wheat-based"]
+      },
+      {
+        "name": "Hangar 1",
+        "origin": "USA",
+        "key_features": ["California-based", "Craft vodka"]
+      }
+    ]
+  }
+  

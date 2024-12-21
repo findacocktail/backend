@@ -1,0 +1,135 @@
+{
+    "brands": [
+      {
+        "name": "Bacardi",
+        "origin": "Puerto Rico",
+        "key_features": ["Light and dark rums", "Affordable", "Wide availability"]
+      },
+      {
+        "name": "Captain Morgan",
+        "origin": "Jamaica",
+        "key_features": ["Spiced rum", "Popular for cocktails", "Accessible price"]
+      },
+      {
+        "name": "Mount Gay",
+        "origin": "Barbados",
+        "key_features": ["Oldest rum brand", "Smooth taste", "Premium quality"]
+      },
+      {
+        "name": "Appleton Estate",
+        "origin": "Jamaica",
+        "key_features": ["Jamaican rum", "Rich flavor", "Aged varieties"]
+      },
+      {
+        "name": "Kraken",
+        "origin": "USA",
+        "key_features": ["Black spiced rum", "Bold flavor", "Distinctive branding"]
+      },
+      {
+        "name": "Diplomatico",
+        "origin": "Venezuela",
+        "key_features": ["Premium rum", "Rich and sweet profile", "Aged rums"]
+      },
+      {
+        "name": "Ron Zacapa",
+        "origin": "Guatemala",
+        "key_features": ["Ultra-premium rum", "Aged using solera method", "Rich and smooth"]
+      },
+      {
+        "name": "Flor de Caña",
+        "origin": "Nicaragua",
+        "key_features": ["Sustainably produced", "Aged varieties", "Smooth taste"]
+      },
+      {
+        "name": "Havana Club",
+        "origin": "Cuba",
+        "key_features": ["Classic Cuban rum", "Aged options", "Rich and smooth"]
+      },
+      {
+        "name": "Brugal",
+        "origin": "Dominican Republic",
+        "key_features": ["Premium rum", "Rich flavor", "Wide range of aged options"]
+      },
+      {
+        "name": "El Dorado",
+        "origin": "Guyana",
+        "key_features": ["Aged rums", "Rich and smooth", "High-quality production"]
+      },
+      {
+        "name": "Rhum Clément",
+        "origin": "Martinique",
+        "key_features": ["Agricole rum", "Made from sugarcane juice", "Distinct flavor"]
+      },
+      {
+        "name": "Pusser's Rum",
+        "origin": "British Virgin Islands",
+        "key_features": ["Navy-style rum", "Rich and robust flavor"]
+      },
+      {
+        "name": "Sailor Jerry",
+        "origin": "USA",
+        "key_features": ["Spiced rum", "Bold flavor", "Vanilla and cinnamon notes"]
+      },
+      {
+        "name": "Gosling's",
+        "origin": "Bermuda",
+        "key_features": ["Famous for Dark 'n Stormy", "Rich and dark flavor"]
+      },
+      {
+        "name": "Zaya",
+        "origin": "Trinidad and Tobago",
+        "key_features": ["Premium rum", "Rich and sweet", "Caramel and vanilla notes"]
+      },
+      {
+        "name": "Angostura",
+        "origin": "Trinidad and Tobago",
+        "key_features": ["Wide range of rums", "Distinctive flavor profile"]
+      },
+      {
+        "name": "Chairman's Reserve",
+        "origin": "Saint Lucia",
+        "key_features": ["Blended rum", "Rich and smooth"]
+      },
+      {
+        "name": "Foursquare",
+        "origin": "Barbados",
+        "key_features": ["Premium rum", "Aged and unadulterated", "High-quality"]
+      },
+      {
+        "name": "Banks Rum",
+        "origin": "Multiple origins",
+        "key_features": ["Blended rum", "Complex flavor"]
+      },
+      {
+        "name": "Myers's Rum",
+        "origin": "Jamaica",
+        "key_features": ["Dark rum", "Bold flavor", "Rich molasses notes"]
+      },
+      {
+        "name": "Saint James",
+        "origin": "Martinique",
+        "key_features": ["Agricole rum", "Sugarcane juice-based", "Rich flavor"]
+      },
+      {
+        "name": "Plantation Rum",
+        "origin": "Multiple origins",
+        "key_features": ["Artisan rum", "Aged in cognac barrels", "Rich and complex flavor"]
+      },
+      {
+        "name": "Bumbu",
+        "origin": "Barbados",
+        "key_features": ["Spiced rum", "Sweet and smooth flavor"]
+      },
+      {
+        "name": "Black Tot",
+        "origin": "Caribbean",
+        "key_features": ["Navy-style rum", "Rich and historical"]
+      },
+      {
+        "name": "Don Q",
+        "origin": "Puerto Rico",
+        "key_features": ["Affordable", "Wide range of styles"]
+      }
+    ]
+  }
+  

@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/ramonmedeiros/iba/cmd"
+	"github.com/ramonmedeiros/iba/internal/pkg/recipes"
 )
 
 var (
@@ -14,21 +14,21 @@ var (
 )
 
 type Server struct {
-	port   string
-	logger *slog.Logger
-	router *gin.Engine
-	cache  []*cmd.Recipe
+	port          string
+	logger        *slog.Logger
+	router        *gin.Engine
+	recipeService recipes.Service
 }
 
 type API interface {
 	Serve()
 }
 
-func New(port string, logger *slog.Logger, recipes []*cmd.Recipe) *Server {
+func New(port string, logger *slog.Logger, recipeService recipes.Service) *Server {
 	return &Server{
-		port:   port,
-		logger: logger,
-		cache:  recipes,
+		port:          port,
+		logger:        logger,
+		recipeService: recipeService,
 	}
 }
 
