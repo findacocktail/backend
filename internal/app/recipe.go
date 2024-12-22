@@ -21,9 +21,10 @@ func (s *Server) setupEndpoints() {
 }
 
 func (s *Server) getCocktails(c *gin.Context) {
-	searchTerms := c.QueryArray("term")
-
-	results, err := s.recipeService.Search(searchTerms)
+	results, err := s.recipeService.Search(
+		c.QueryArray("term"),
+		c.QueryArray("notIncluded"),
+	)
 	if errors.Is(err, recipes.ErrNotFound) {
 		c.AbortWithStatus(http.StatusNotFound)
 		return

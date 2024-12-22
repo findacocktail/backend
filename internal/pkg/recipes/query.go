@@ -13,11 +13,17 @@ var (
 	ErrNotFound = errors.New("cocktail not found")
 )
 
-func (r *service) Search(terms []string) ([]Recipe, error) {
+func (r *service) Search(includedTerms []string, notIncludedTerms []string) ([]Recipe, error) {
+	buildQuery := lo.Map(includedTerms, func(term string, _ int) query.Query {
+		return bleve.NewQueryStringQuery(term)
+	})
+
+	buildQuery = append(buildQuery, lo.Map(notIncludedTerms, func(term string, _ int) query.Query {
+		return bleve.NewQueryStringQuery("-" + term)
+	})...)
+
 	query := bleve.NewConjunctionQuery(
-		lo.Map(terms, func(term string, _ int) query.Query {
-			return bleve.NewQueryStringQuery(term)
-		})...,
+		buildQuery...,
 	)
 
 	searchResult, err := r.recipesIndex.Search(bleve.NewSearchRequest(query))
