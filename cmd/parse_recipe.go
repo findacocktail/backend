@@ -15,6 +15,7 @@ type Recipe struct {
 	Ingredients []*Ingredient `json:"ingredients"`
 	Method      string        `json:"method"`
 	Garnish     string        `json:"garnish"`
+	ImageURL    string        `json:"image_url"`
 }
 
 type Ingredient struct {
@@ -53,6 +54,18 @@ func parseRecipe(recipeLink string) (*Recipe, error) {
 	recipe := Recipe{
 		Name:        strings.TrimSpace(cocktailName.FirstChild.Data),
 		YoutubeLink: youtubeLink,
+	}
+
+	image, err := getNodeByAttribute(token, "fetchpriority", "high")
+	if err != nil {
+		return nil, err
+	}
+
+	for _, attr := range image.Attr {
+		if attr.Key == "src" {
+			recipe.ImageURL = attr.Val
+			break
+		}
 	}
 
 	ingredients, err := parseIngredients(token)

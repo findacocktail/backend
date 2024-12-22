@@ -10,11 +10,11 @@ import (
 	"github.com/samber/lo"
 )
 
-//go:embed static/20241221.json
+//go:embed static/20241222.json
 var content embed.FS
 
 const (
-	recipesFileName string = "static/20241221.json"
+	recipesFileName string = "static/20241222.json"
 )
 
 type Service interface {
