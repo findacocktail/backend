@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/findacocktail/backend/cmd/iba"
+	liquorcom "github.com/findacocktail/backend/cmd/liquor.com"
 	"github.com/findacocktail/backend/cmd/model"
 )
 
@@ -16,7 +16,8 @@ var (
 )
 
 func Scrape() {
-	for _, parser := range []model.Parser{iba.New()} {
+	// iba.New()
+	for _, parser := range []model.Parser{liquorcom.New()} {
 		urls, err := parser.GetLinks()
 		if err != nil {
 			panic(err)
@@ -63,7 +64,6 @@ func Scrape() {
 			panic(err)
 		}
 	}
-
 }
 
 type test struct {

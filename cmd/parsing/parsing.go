@@ -52,6 +52,30 @@ func GetNodeByAttribute(root *html.Node, attributeName string, attributeValue st
 	return nil, errors.New(fmt.Sprint("tag not found", attributeName, attributeName))
 }
 
+func GetNodeIfAttributeExists(root *html.Node, attributeName string) (*html.Node, error) {
+	var tag *html.Node
+	var f func(node *html.Node)
+	f = func(node *html.Node) {
+		if node.Type == html.ElementNode {
+
+			for _, attr := range node.Attr {
+				if attr.Key == attributeName {
+					tag = node
+					return
+				}
+			}
+		}
+		for child := node.FirstChild; child != nil; child = child.NextSibling {
+			f(child)
+		}
+	}
+	f(root)
+	if tag != nil {
+		return tag, nil
+	}
+	return nil, errors.New(fmt.Sprint("tag not found", attributeName, attributeName))
+}
+
 func GetLinkStartsWith(root *html.Node, link string) (string, error) {
 	var f func(node *html.Node)
 	var href string
