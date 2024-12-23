@@ -6,6 +6,7 @@ type Recipe struct {
 	Ingredients []*Ingredient `json:"ingredients"`
 	Method      string        `json:"method"`
 	Garnish     string        `json:"garnish"`
+	ImageURL    string        `json:"image_url"`
 }
 
 type Ingredient struct {
