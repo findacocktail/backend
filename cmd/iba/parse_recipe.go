@@ -1,12 +1,12 @@
 package iba
 
 import (
-	"errors"
 	"fmt"
 	"net/http"
 	"strings"
 
 	"github.com/findacocktail/backend/cmd/model"
+	"github.com/findacocktail/backend/cmd/parsing"
 	"golang.org/x/net/html"
 )
 
@@ -27,12 +27,12 @@ func (p *ibaParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 		return nil, err
 	}
 
-	cocktailName, err := getNode(token, "h1")
+	cocktailName, err := parsing.GetNode(token, "h1")
 	if err != nil {
 		return nil, err
 	}
 
-	youtubeLink, err := getLinkStartsWith(token, "https://www.youtube.com/watch")
+	youtubeLink, err := parsing.GetLinkStartsWith(token, "https://www.youtube.com/watch")
 	if err != nil {
 		fmt.Println("could not find link", err)
 	}
@@ -42,7 +42,7 @@ func (p *ibaParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 		YoutubeLink: youtubeLink,
 	}
 
-	image, err := getNodeByAttribute(token, "fetchpriority", "high")
+	image, err := parsing.GetNodeByAttribute(token, "fetchpriority", "high")
 	if err != nil {
 		return nil, err
 	}
@@ -73,73 +73,4 @@ func (p *ibaParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 	recipe.Garnish = garnish
 
 	return &recipe, nil
-}
-
-func getNode(root *html.Node, tagText string) (*html.Node, error) {
-	var tag *html.Node
-	var f func(node *html.Node)
-	f = func(node *html.Node) {
-		if strings.EqualFold(node.Data, tagText) {
-			tag = node
-			return
-		}
-		for child := node.FirstChild; child != nil; child = child.NextSibling {
-			f(child)
-		}
-	}
-	f(root)
-	if tag != nil {
-		return tag, nil
-	}
-	return nil, errors.New(fmt.Sprint("tag not found", tagText))
-}
-
-func getNodeByAttribute(root *html.Node, attributeName string, attributeValue string) (*html.Node, error) {
-	var tag *html.Node
-	var f func(node *html.Node)
-	f = func(node *html.Node) {
-		if node.Type == html.ElementNode {
-
-			for _, attr := range node.Attr {
-				if attr.Key == attributeName &&
-					attr.Val == attributeValue {
-					tag = node
-					return
-				}
-			}
-		}
-		for child := node.FirstChild; child != nil; child = child.NextSibling {
-			f(child)
-		}
-	}
-	f(root)
-	if tag != nil {
-		return tag, nil
-	}
-	return nil, errors.New(fmt.Sprint("tag not found", attributeName, attributeName))
-}
-
-func getLinkStartsWith(root *html.Node, link string) (string, error) {
-	var f func(node *html.Node)
-	var href string
-	f = func(node *html.Node) {
-		if node.Type == html.ElementNode {
-
-			for _, attr := range node.Attr {
-				if attr.Key == "href" &&
-					strings.HasPrefix(attr.Val, link) {
-					href = attr.Val
-					return
-				}
-			}
-		}
-		for child := node.FirstChild; child != nil; child = child.NextSibling {
-			f(child)
-		}
-	}
-	f(root)
-	if href != "" {
-		return href, nil
-	}
-	return href, errors.New(fmt.Sprint("tag not found", link))
 }

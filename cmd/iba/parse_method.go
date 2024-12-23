@@ -3,11 +3,12 @@ package iba
 import (
 	"strings"
 
+	"github.com/findacocktail/backend/cmd/parsing"
 	"golang.org/x/net/html"
 )
 
 func parseListOfP(root *html.Node, header string) (string, error) {
-	node, err := getNode(root, header)
+	node, err := parsing.GetNode(root, header)
 	if err != nil {
 		return "", err
 	}
@@ -15,7 +16,7 @@ func parseListOfP(root *html.Node, header string) (string, error) {
 	topParent := node.Parent.Parent.Parent
 	nextNode := topParent.NextSibling.NextSibling
 
-	div, err := getNodeByAttribute(nextNode, "class", "elementor-shortcode")
+	div, err := parsing.GetNodeByAttribute(nextNode, "class", "elementor-shortcode")
 	if err != nil {
 		return "", err
 	}

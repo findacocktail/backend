@@ -6,11 +6,12 @@ import (
 	"strings"
 
 	"github.com/findacocktail/backend/cmd/model"
+	"github.com/findacocktail/backend/cmd/parsing"
 	"golang.org/x/net/html"
 )
 
 func parseIngredients(root *html.Node) ([]*model.Ingredient, error) {
-	node, err := getNode(root, "Ingredients")
+	node, err := parsing.GetNode(root, "Ingredients")
 	if err != nil {
 		return nil, err
 	}
@@ -18,7 +19,7 @@ func parseIngredients(root *html.Node) ([]*model.Ingredient, error) {
 	topParent := node.Parent.Parent.Parent
 	nextNode := topParent.NextSibling.NextSibling
 
-	ulList, err := getNode(nextNode, "ul")
+	ulList, err := parsing.GetNode(nextNode, "ul")
 	if err != nil {
 		return nil, err
 	}
