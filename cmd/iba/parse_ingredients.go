@@ -1,14 +1,15 @@
-package main
+package iba
 
 import (
 	"fmt"
 	"strconv"
 	"strings"
 
+	"github.com/ramonmedeiros/iba/cmd/model"
 	"golang.org/x/net/html"
 )
 
-func parseIngredients(root *html.Node) ([]*Ingredient, error) {
+func parseIngredients(root *html.Node) ([]*model.Ingredient, error) {
 	node, err := getNode(root, "Ingredients")
 	if err != nil {
 		return nil, err
@@ -23,7 +24,7 @@ func parseIngredients(root *html.Node) ([]*Ingredient, error) {
 	}
 
 	child := ulList.FirstChild
-	ingredients := []*Ingredient{}
+	ingredients := []*model.Ingredient{}
 	for child != nil {
 		if child.Data == "li" {
 			ingredientSplit := strings.Split(child.FirstChild.Data, " ")
@@ -34,7 +35,7 @@ func parseIngredients(root *html.Node) ([]*Ingredient, error) {
 				ingredientSplit = []string{"", "", child.FirstChild.Data}
 			}
 
-			ingredients = append(ingredients, &Ingredient{
+			ingredients = append(ingredients, &model.Ingredient{
 				Amount:      amount,
 				Scale:       ingredientSplit[1],
 				Description: strings.Join(ingredientSplit[2:], " "),

@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/caarlos0/env"
+	"github.com/ramonmedeiros/iba/cmd"
 	"github.com/ramonmedeiros/iba/internal/app"
 	"github.com/ramonmedeiros/iba/internal/pkg/recipes"
 )
@@ -15,6 +16,11 @@ type config struct {
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "scrape" {
+		cmd.Scrape()
+		os.Exit(0)
+	}
+
 	logger := slog.New(slog.NewJSONHandler(os.Stderr, nil))
 	logger.Enabled(context.Background(), slog.LevelError)
 

@@ -1,4 +1,4 @@
-package main
+package iba
 
 import (
 	"bytes"
@@ -6,20 +6,24 @@ import (
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/ramonmedeiros/iba/cmd/model"
 )
 
 const cocktailSitemap = "https://iba-world.com/wp-sitemap-posts-iba-cocktail-1.xml"
 
-type Urlset struct {
-	XMLName xml.Name `xml:"urlset"`
-	Xmlns   string   `xml:"xmlns,attr"`
-	URL     []struct {
-		Loc     string `xml:"loc"`
-		Lastmod string `xml:"lastmod"`
-	} `xml:"url"`
+type ibaParser struct {
 }
 
-func parseSitemap() ([]string, error) {
+func New() *ibaParser {
+	return &ibaParser{}
+}
+
+func (p *ibaParser) GetSource() string {
+	return "iba"
+}
+
+func (p *ibaParser) GetLinks() ([]string, error) {
 	req, err := http.NewRequest(http.MethodGet, cocktailSitemap, nil)
 	if err != nil {
 		return nil, err
@@ -37,7 +41,7 @@ func parseSitemap() ([]string, error) {
 		return nil, err
 	}
 
-	var newSitemap Urlset
+	var newSitemap model.Sitemap
 	err = xml.NewDecoder(bytes.NewBufferString(string(content))).Decode(&newSitemap)
 	if err != nil {
 		log.Fatal(err)

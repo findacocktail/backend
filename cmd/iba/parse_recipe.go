@@ -1,4 +1,4 @@
-package main
+package iba
 
 import (
 	"errors"
@@ -6,25 +6,11 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/ramonmedeiros/iba/cmd/model"
 	"golang.org/x/net/html"
 )
 
-type Recipe struct {
-	Name        string        `json:"name"`
-	YoutubeLink string        `json:"youtube_link"`
-	Ingredients []*Ingredient `json:"ingredients"`
-	Method      string        `json:"method"`
-	Garnish     string        `json:"garnish"`
-	ImageURL    string        `json:"image_url"`
-}
-
-type Ingredient struct {
-	Amount      float64 `json:"amount"`
-	Scale       string  `json:"scale"`
-	Description string  `json:"description"`
-}
-
-func parseRecipe(recipeLink string) (*Recipe, error) {
+func (p *ibaParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 	req, err := http.NewRequest(http.MethodGet, recipeLink, nil)
 	if err != nil {
 		return nil, err
@@ -51,7 +37,7 @@ func parseRecipe(recipeLink string) (*Recipe, error) {
 		fmt.Println("could not find link", err)
 	}
 
-	recipe := Recipe{
+	recipe := model.Recipe{
 		Name:        strings.TrimSpace(cocktailName.FirstChild.Data),
 		YoutubeLink: youtubeLink,
 	}
