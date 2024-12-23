@@ -72,7 +72,6 @@ type test struct {
 	recipes []*model.Recipe
 }
 
-// Search for prime numbers in 4 ranges.
 func (t *test) dispatchJob(url string) {
 	t.wg.Add(1)
 	go func(url string) {
