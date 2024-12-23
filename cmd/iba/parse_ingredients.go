@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ramonmedeiros/iba/cmd/model"
+	"github.com/findacocktail/backend/cmd/model"
 	"golang.org/x/net/html"
 )
 

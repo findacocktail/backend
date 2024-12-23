@@ -4,9 +4,9 @@ import (
 	"errors"
 	"log/slog"
 
+	"github.com/findacocktail/backend/internal/pkg/recipes"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/ramonmedeiros/iba/internal/pkg/recipes"
 )
 
 var (

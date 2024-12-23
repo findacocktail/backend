@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ramonmedeiros/iba/cmd/model"
+	"github.com/findacocktail/backend/cmd/model"
 )
 
 const cocktailSitemap = "https://iba-world.com/wp-sitemap-posts-iba-cocktail-1.xml"

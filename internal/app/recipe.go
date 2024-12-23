@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/findacocktail/backend/internal/pkg/recipes"
 	"github.com/gin-gonic/gin"
-	"github.com/ramonmedeiros/iba/internal/pkg/recipes"
 )
 
 const (

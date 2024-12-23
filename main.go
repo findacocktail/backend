@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/caarlos0/env"
-	"github.com/ramonmedeiros/iba/cmd"
-	"github.com/ramonmedeiros/iba/internal/app"
-	"github.com/ramonmedeiros/iba/internal/pkg/recipes"
+	"github.com/findacocktail/backend/cmd"
+	"github.com/findacocktail/backend/internal/app"
+	"github.com/findacocktail/backend/internal/pkg/recipes"
 )
 
 type config struct {

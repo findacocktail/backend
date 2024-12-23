@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ramonmedeiros/iba/cmd/iba"
-	"github.com/ramonmedeiros/iba/cmd/model"
+	"github.com/findacocktail/backend/cmd/iba"
+	"github.com/findacocktail/backend/cmd/model"
 )
 
 var (

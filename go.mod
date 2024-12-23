@@ -1,4 +1,4 @@
-module github.com/ramonmedeiros/iba
+module github.com/findacocktail/backend
 
 go 1.23.2
 
