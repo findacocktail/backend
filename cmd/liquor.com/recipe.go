@@ -52,11 +52,15 @@ func (p *liquorParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 	waybackURL = waybackURL[:len(waybackURL)-1]
 	waybackURL += "im_/"
 
-	imageLink, err := parsing.GetAttributeStartsWith(token, "src", waybackURL+"https://www.liquor.com/thmb/")
+	imageLink, err := parsing.GetNodeByAttribute(token, "property", "og:image")
 	if err != nil {
 		slog.Error("could not find link", slog.Any("err", err), slog.Any("link", recipeLink))
 	} else {
-		recipe.ImageURL = strings.TrimPrefix(imageLink, waybackURL)
+		for _, attr := range imageLink.Attr {
+			if attr.Key == "content" {
+				recipe.ImageURL = strings.TrimPrefix(attr.Val, waybackURL)
+			}
+		}
 	}
 
 	ingredients, err := parseIngredients(token)

@@ -9,7 +9,12 @@ import (
 )
 
 func parseIngredients(token *html.Node) ([]*model.Ingredient, error) {
-	ingredientList, err := parsing.GetNodeByAttribute(token, "class", "structured-ingredients__list text-passage")
+	ingredientSection, err := parsing.GetNodeByAttribute(token, "id", "section--ingredients_1-0")
+	if err != nil {
+		return nil, err
+	}
+
+	ingredientList, err := parsing.GetNode(ingredientSection, "ul")
 	if err != nil {
 		return nil, err
 	}
