@@ -3,6 +3,7 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"log/slog"
 	"os"
 	"sync"
 	"time"
@@ -17,7 +18,7 @@ var (
 
 func Scrape() {
 	// iba.New()
-	for _, parser := range []model.Parser{liquorcom.New()} {
+	for _, parser := range []model.Parser{liquorcom.New(true)} {
 		urls, err := parser.GetLinks()
 		if err != nil {
 			panic(err)
@@ -59,7 +60,7 @@ func Scrape() {
 			parser.GetSource(),
 		)
 
-		err = os.WriteFile(fileName, content, os.ModeAppend)
+		err = os.WriteFile(fileName, content, os.ModePerm)
 		if err != nil {
 			panic(err)
 		}
@@ -77,9 +78,11 @@ func (t *test) dispatchJob(url string) {
 	go func(url string) {
 		recipe, err := t.parser.GetRecipe(url)
 		if err != nil {
-			panic(err)
+			slog.Error("could not fetch", url, err)
+
+		} else {
+			t.recipes = append(t.recipes, recipe)
 		}
-		t.recipes = append(t.recipes, recipe)
 
 		t.wg.Done()
 	}(url)

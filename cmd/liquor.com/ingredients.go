@@ -16,27 +16,28 @@ func parseIngredients(token *html.Node) ([]*model.Ingredient, error) {
 
 	ingredients := []*model.Ingredient{}
 	for node := range ingredientList.ChildNodes() {
-		ingredient := model.Ingredient{}
+		if node.Data != "li" {
+			continue
+		}
 
-		quantityNode, err := parsing.GetNodeIfAttributeExists(node, "data-ingredient-quantity")
-		if err == nil {
-			quantity, err := strconv.ParseFloat(quantityNode.Data, 64)
+		ingredient := model.Ingredient{}
+		quantityNode, err := parsing.GetNodeByAttribute(node, "data-ingredient-quantity", "true")
+		if err == nil && quantityNode.FirstChild != nil {
+			quantity, err := strconv.ParseFloat(quantityNode.FirstChild.Data, 64)
 			if err == nil {
 				ingredient.Amount = quantity
 			}
 		}
 
-		unitNode, err := parsing.GetNodeIfAttributeExists(node, "data-ingredient-unit")
-		if err == nil {
-			unit, err := strconv.ParseFloat(unitNode.Data, 64)
-			if err == nil {
-				ingredient.Amount = unit
-			}
+		unitNode, err := parsing.GetNodeByAttribute(node, "data-ingredient-unit", "true")
+		if err == nil && unitNode.FirstChild != nil {
+			ingredient.Scale = unitNode.FirstChild.Data
+
 		}
 
-		nameNode, err := parsing.GetNodeIfAttributeExists(node, "data-ingredient-name")
-		if err == nil {
-			ingredient.Description = nameNode.Data
+		nameNode, err := parsing.GetNodeByAttribute(node, "data-ingredient-name", "true")
+		if err == nil && nameNode.FirstChild != nil {
+			ingredient.Description = nameNode.FirstChild.Data
 		}
 
 		ingredients = append(ingredients, &ingredient)

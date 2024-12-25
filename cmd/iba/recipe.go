@@ -32,7 +32,7 @@ func (p *ibaParser) GetRecipe(recipeLink string) (*model.Recipe, error) {
 		return nil, err
 	}
 
-	youtubeLink, err := parsing.GetLinkStartsWith(token, "https://www.youtube.com/watch")
+	youtubeLink, err := parsing.GetAttributeStartsWith(token, "href", "https://www.youtube.com/watch")
 	if err != nil {
 		fmt.Println("could not find link", err)
 	}
