@@ -12,6 +12,7 @@ RUN go mod download
 COPY Makefile Makefile
 COPY main.go main.go
 COPY internal/ internal/
+COPY cmd/ cmd/
 
 RUN set -xe && go build -o bin/backend main.go
 
