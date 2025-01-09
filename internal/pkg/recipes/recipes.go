@@ -19,6 +19,7 @@ const (
 
 type Service interface {
 	Search(includedTerms []string, notIncludedTerms []string) ([]Recipe, error)
+	RecipeByName(name string) (*Recipe, error)
 }
 
 type service struct {

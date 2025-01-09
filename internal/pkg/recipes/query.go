@@ -13,6 +13,7 @@ var (
 	ErrNotFound = errors.New("cocktail not found")
 )
 
+// Search return a list of matches given terms
 func (r *service) Search(includedTerms []string, notIncludedTerms []string) ([]Recipe, error) {
 	buildQuery := lo.Map(includedTerms, func(term string, _ int) query.Query {
 		return bleve.NewQueryStringQuery(term)
@@ -41,4 +42,14 @@ func (r *service) Search(includedTerms []string, notIncludedTerms []string) ([]R
 	}
 
 	return results, nil
+}
+
+// RecipeByName returns a recipe by a specific name
+func (r *service) RecipeByName(name string) (*Recipe, error) {
+	recipe, found := r.recipesMap[name]
+	if !found {
+		return nil, ErrNotFound
+	}
+
+	return &recipe, nil
 }

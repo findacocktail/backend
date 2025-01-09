@@ -16,8 +16,9 @@ const (
 )
 
 func (s *Server) setupEndpoints() {
-	usersEndpoint := s.router.Group("/cocktails")
-	usersEndpoint.GET("", s.getCocktails)
+	cocktailsEndpoint := s.router.Group("/cocktails")
+	cocktailsEndpoint.GET("", s.getCocktails)
+	cocktailsEndpoint.GET(":name", s.getCocktail)
 }
 
 func (s *Server) getCocktails(c *gin.Context) {
@@ -31,4 +32,16 @@ func (s *Server) getCocktails(c *gin.Context) {
 	}
 
 	c.IndentedJSON(http.StatusOK, results)
+}
+
+func (s *Server) getCocktail(c *gin.Context) {
+	result, err := s.recipeService.RecipeByName(
+		c.Param("name"),
+	)
+	if errors.Is(err, recipes.ErrNotFound) {
+		c.AbortWithStatus(http.StatusNotFound)
+		return
+	}
+
+	c.IndentedJSON(http.StatusOK, result)
 }
