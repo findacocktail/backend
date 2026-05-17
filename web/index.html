@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a Cocktail</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <h1>Find a Cocktail</h1>
+        <p>Search by ingredient — add multiple to narrow results</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <div class="chips-input" id="chips-input">
+          <div class="chips" id="chips"></div>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Type an ingredient and press Enter…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <p class="hint">
+          Prefix with <code>-</code> to exclude an ingredient &nbsp;·&nbsp;
+          Press <kbd>Enter</kbd> or <kbd>,</kbd> to add
+        </p>
+      </section>
+
+      <section class="results-section">
+        <p class="result-count" id="result-count"></p>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>No cocktails match those ingredients.</p>
+      </section>
+    </main>
+
+    <dialog id="modal" aria-modal="true">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
