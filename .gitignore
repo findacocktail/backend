@@ -25,3 +25,7 @@ go.work.sum
 .env
 
 .vscode/*
+
+# Web app
+web/node_modules/
+web/dist/
